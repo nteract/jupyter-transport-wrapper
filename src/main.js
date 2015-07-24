@@ -79,11 +79,22 @@ export default class JupyterTransportWrapper extends EventEmitter {
         }
     }
 
+    interrupt() {
+        if (this.kernelProcess !== null
+            && this.kernelProcess !== undefined) {
+            this.kernelProcess.kill('SIGINT');
+        }
+    }
+
     close() {
         this.removeAllListeners();
         this.shellSocket.close();
         this.ioSocket.close();
         this.controlSocket.close();
-        this.kernelProcess.kill('SIGKILL');
+
+        if (this.kernelProcess !== null
+            && this.kernelProcess !== undefined) {
+            this.kernelProcess.kill('SIGKILL');
+        }
     }
 }
