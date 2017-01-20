@@ -1,5 +1,7 @@
 # jupyter-transport-wrapper
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nteract/jupyter-transport-wrapper.svg)](https://greenkeeper.io/)
+
 Currently just provides a very simple layer on top of Jupyter ZMQ sockets. Will one day abstract over ZMQ or websockets for Jupyter.
 
 Probably easier to use [jupyter-session](https://github.com/nteract/jupyter-session), which is built on this, for whatever you're doing.
